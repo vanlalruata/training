@@ -2515,13 +2515,17 @@ class TodoController extends Controller
                             <div class="file-path">resources/views/dashboard.blade.php</div>
                             <div class="code-block">
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                                <pre><code class="language-php">&lt;x-app-layout&gt;
-    &lt;x-slot name="header"&gt;
-        &lt;h2 class="font-semibold text-xl text-gray-800 leading-tight"&gt;
-            {{ __('Dashboard') }}
-        &lt;/h2&gt;
-    &lt;/x-slot&gt;
+                                <pre><code class="language-php">@extends('layouts.app')
 
+@section('title', 'Dashboard')
+
+@section('header')
+    &lt;h2 class="font-semibold text-xl text-gray-800 leading-tight"&gt;
+        {{ __('Dashboard') }}
+    &lt;/h2&gt;
+@endsection
+
+@section('content')
     &lt;div class="py-12"&gt;
         &lt;div class="max-w-7xl mx-auto sm:px-6 lg:px-8"&gt;
             {{-- Welcome Message --}}
@@ -2662,7 +2666,7 @@ class TodoController extends Controller
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/x-app-layout&gt;</code></pre>
+@endsection</code></pre>
                             </div>
                         </div>
                     </div>
